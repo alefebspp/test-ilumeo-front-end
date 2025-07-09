@@ -18,7 +18,7 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full h-20 flex items-center justify-between border-b border-[#E0E0E0] px-4 lg:px-8">
+    <header className="w-full h-20 flex items-center justify-between border-b border-app-gray-border px-4 lg:px-8">
       <div className="flex items-center gap-2">
         <img src="/logo.svg" alt="App logo" className="size-6" />
         <span className="hidden lg:block text-app-gray-dark text-2xl font-semibold">

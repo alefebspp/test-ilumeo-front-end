@@ -3,9 +3,12 @@ import { isAxiosError } from "axios";
 export function returnErrorMessage(error: unknown) {
   if (isAxiosError(error)) {
     if (error.response) {
-      return error.response.data.message as string;
+      return (
+        (error.response.data.message as string) ||
+        "Erro no servidor. Por favor, tente de novo."
+      );
     }
   }
 
-  return "Server error. Please, try again.";
+  return "Erro no servidor. Por favor, tente de novo.";
 }
