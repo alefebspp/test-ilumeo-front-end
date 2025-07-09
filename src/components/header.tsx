@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { LogOut, Menu } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 import { Button } from "./ui/button";
 import { useUserContext } from "@/contexts/user-context";
