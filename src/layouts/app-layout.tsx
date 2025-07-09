@@ -9,7 +9,7 @@ import api from "@/lib/axios";
 import { useUserContext } from "@/contexts/user-context";
 
 export default function AppLayout() {
-  const { user } = useUserContext();
+  const { user, logout } = useUserContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,6 +19,9 @@ export default function AppLayout() {
         if (isAxiosError(error)) {
           const status = error.response?.status;
           if (status === 401) {
+            if (user) {
+              logout();
+            }
             toast("Por favor, faça login.");
 
             navigate("/", { replace: true });
@@ -43,9 +46,11 @@ export default function AppLayout() {
   }
 
   return (
-    <main className="flex flex-col min-h-svh">
+    <main className="flex flex-col w-screen h-screen">
       <Header />
-      <Outlet />
+      <div className="w-full h-full max-w-[1200px] mx-auto p-4 lg:p-16 overflow-y-auto">
+        <Outlet />
+      </div>
     </main>
   );
 }

@@ -7,16 +7,16 @@ import DotsLoader from "../dots-loader";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed [&_svg]:pointer-events-none",
   {
     variants: {
       variant: {
         default:
-          "bg-blue-500 text-white font-medium shadow hover:brightness-110",
+          "bg-blue-500 text-white font-medium shadow hover:brightness-110 disabled:bg-[#E9E9E9] disabled:text-[#A4A1A1] disabled:hover:brightness-100",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-app-border text-app-standard bg-background rounded-lg",
+          "border border-app-gray-border text-app-standard bg-background rounded-lg",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",

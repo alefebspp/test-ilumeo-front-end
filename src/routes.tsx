@@ -4,6 +4,7 @@ import LoginPage from "./pages/auth/login";
 import RegisterPage from "./pages/auth/register";
 import AppLayout from "./layouts/app-layout";
 import NotFound from "./components/not-found";
+import DashboardPage from "./pages/dashboard";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
@@ -27,7 +28,7 @@ export default function AppRoutes() {
       children: [
         {
           path: "",
-          element: <h1>Dashboard</h1>,
+          element: <DashboardPage />,
         },
         {
           path: "historico",

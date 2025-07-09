@@ -22,7 +22,7 @@ export default {
             dark: "#242424",
             standard: "#565656",
             light: "#9E9E9E",
-            border: "#9A9A9A",
+            border: "#E0E0E0",
           },
         },
         background: "hsl(var(--background))",
