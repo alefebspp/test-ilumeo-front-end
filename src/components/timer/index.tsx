@@ -12,7 +12,7 @@ export type TimerProps = {
   };
   isLoading: boolean;
   isMutating: boolean;
-  actionInProgress: "start" | "end";
+  actionInProgress: "start" | "end" | null;
   startSession: () => Promise<void>;
   endSession: () => Promise<void>;
 };
