@@ -11,6 +11,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        badge: "bg-[#E9E9E9] text-app-gray-dark",
         default:
           "bg-blue-500 text-white font-medium shadow hover:brightness-110 disabled:bg-[#E9E9E9] disabled:text-[#A4A1A1] disabled:hover:brightness-100",
         destructive:
@@ -25,6 +26,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "w-full h-11 px-4 py-2",
+        badge: "px-6 py-1 rounded-xl",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-fit w-fit",
