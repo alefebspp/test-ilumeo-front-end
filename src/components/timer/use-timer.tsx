@@ -10,9 +10,9 @@ import { returnErrorMessage } from "@/utils";
 
 export default function useTimer(): TimerProps {
   const [elapsed, setElapsed] = useState(0);
-  const [actionInProgress, setActionInProgress] = useState<"start" | "end">(
-    "start"
-  );
+  const [actionInProgress, setActionInProgress] = useState<
+    "start" | "end" | null
+  >(null);
 
   const queryClient = useQueryClient();
 
@@ -67,6 +67,8 @@ export default function useTimer(): TimerProps {
     } catch (error) {
       const message = returnErrorMessage(error);
       toast.error(message);
+    } finally {
+      setActionInProgress(null);
     }
   }
 
