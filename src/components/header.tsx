@@ -4,6 +4,7 @@ import { LogOut, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { useUserContext } from "@/contexts/user-context";
 import { logout } from "@/services/auth";
+import MobileHeaderDrawer from "./mobile-header-drawer";
 
 export default function Header() {
   const { logout: contextLogout } = useUserContext();
@@ -26,9 +27,7 @@ export default function Header() {
         </span>
       </div>
 
-      <Button variant="ghost" size="icon" className="w-8 h-8">
-        <Menu className="w-6 h-6 text-app-gray-dark lg:hidden" />
-      </Button>
+      <MobileHeaderDrawer />
       <div className="hidden lg:flex h-full items-center gap-12">
         <button
           onClick={() => navigate("/dashboard/historico")}

@@ -12,6 +12,10 @@ export default function RecordsTable() {
   const { records, recordTypeMap, returnZonedFormattedTime } =
     useRecordsTable();
 
+  if (records.length === 0) {
+    return null;
+  }
+
   return (
     <div className="w-full flex flex-col gap-8">
       <h2 className="text-app-gray-dark text-center lg:text-left font-semibold text-2xl">
