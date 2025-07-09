@@ -12,12 +12,20 @@ export type TimerProps = {
   };
   isLoading: boolean;
   isMutating: boolean;
+  actionInProgress: "start" | "end" | null;
   startSession: () => Promise<void>;
   endSession: () => Promise<void>;
 };
 
 export default function Timer(props: TimerProps) {
-  const { isLoading, isMutating, startRecord, endRecord, time } = props;
+  const {
+    isLoading,
+    isMutating,
+    actionInProgress,
+    startRecord,
+    endRecord,
+    time,
+  } = props;
 
   return (
     <section className="w-full flex flex-col gap-8">
@@ -31,7 +39,7 @@ export default function Timer(props: TimerProps) {
       </div>
       <div className="mx-auto w-full flex lg:w-1/2 flex-col lg:flex-row gap-4 lg:gap-8 mt-8 mb-16">
         <Button
-          isLoading={isMutating && endRecord === undefined}
+          isLoading={isMutating && actionInProgress === "start"}
           onClick={props.startSession}
           disabled={!!startRecord || isLoading || isMutating}
           className="lg:w-1/2"
@@ -39,7 +47,7 @@ export default function Timer(props: TimerProps) {
           Iniciar
         </Button>
         <Button
-          isLoading={isMutating && startRecord !== undefined}
+          isLoading={isMutating && actionInProgress === "end"}
           onClick={props.endSession}
           disabled={!startRecord || !!endRecord || isLoading || isMutating}
           className="lg:w-1/2"
