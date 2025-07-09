@@ -9,3 +9,4 @@ Para o back-end, acessar: https://teste-ilumeo-back-end.onrender.com/docs (Docum
 - Criar um arquivo .env no root do projeto com os valores do arquivo .env.example
 
 - Rodar o comando npm run dev
+
