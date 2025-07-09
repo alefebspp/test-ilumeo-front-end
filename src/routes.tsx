@@ -5,6 +5,7 @@ import RegisterPage from "./pages/auth/register";
 import AppLayout from "./layouts/app-layout";
 import NotFound from "./components/not-found";
 import DashboardPage from "./pages/dashboard";
+import HistoryPage from "./pages/dashboard/history";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
@@ -32,7 +33,7 @@ export default function AppRoutes() {
         },
         {
           path: "historico",
-          element: <h1>Historico</h1>,
+          element: <HistoryPage />,
         },
       ],
     },

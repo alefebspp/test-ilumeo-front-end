@@ -9,7 +9,18 @@ export type GetAllRecordsResponse = {
 };
 
 export async function getAllRecords(params?: string) {
-  const response = await api.get<GetAllRecordsResponse>("/record" + params);
+  let url = "/record";
+
+  if (params) {
+    const searchParams = new URLSearchParams(params);
+    const queryString = searchParams.toString();
+
+    if (queryString) {
+      url += `?${queryString}`;
+    }
+  }
+
+  const response = await api.get<GetAllRecordsResponse>(url);
 
   return response.data;
 }
