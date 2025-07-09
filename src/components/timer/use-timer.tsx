@@ -10,6 +10,9 @@ import { returnErrorMessage } from "@/utils";
 
 export default function useTimer(): TimerProps {
   const [elapsed, setElapsed] = useState(0);
+  const [actionInProgress, setActionInProgress] = useState<"start" | "end">(
+    "start"
+  );
 
   const queryClient = useQueryClient();
 
@@ -59,6 +62,7 @@ export default function useTimer(): TimerProps {
 
   async function handleRecord(type: "start" | "end") {
     try {
+      setActionInProgress(type);
       await mutateAsync({ type, createdAt: new Date().toISOString() });
     } catch (error) {
       const message = returnErrorMessage(error);
@@ -92,6 +96,7 @@ export default function useTimer(): TimerProps {
     startSession,
     endSession,
     isMutating: isPending,
+    actionInProgress,
     time,
   };
 }
